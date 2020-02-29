@@ -17,9 +17,17 @@ jt -> java 测试函数
 
 #### 安装教程
 
-1.  下载并解压
+1.  下载并解压，
+git 下载：https://github.com/zttAsoiaf/smartString/archive/master.zip
 
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0223/143847_76c9177e_5544911.png "屏幕截图.png")
+![git 下载](https://images.gitee.com/uploads/images/2020/0301/035908_cd391ef0_5544911.png "屏幕截图.png")
+
+
+如果网络不好可以在gitee下载（需要注册账号）：https://gitee.com/smartString/smart_string/repository/archive/master.zip
+
+![gitee下载](https://images.gitee.com/uploads/images/2020/0223/143847_76c9177e_5544911.png "屏幕截图.png")
+
+
 
 2.  点击[AutoHotkey_1.1.32.00_setup.exe]进行安装，或者从Autohotkey官网下载安装。
 3.  点击start.ahk启动。
@@ -45,4 +53,3 @@ jt -> java 测试函数
 ![微信赞助](https://images.gitee.com/uploads/images/2020/0301/030424_8097a0cf_5544911.png "屏幕截图.png")
 
 #### 赞助名单
-
