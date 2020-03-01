@@ -4,12 +4,19 @@
 智能字符串，用于快捷进行文字处理，当前主要功能是提供缩略语功能，可以添加常用的缩略语，对于任何的电脑工作者均有巨大帮助，可以快捷的打印出任意多行文字。
 例如：
 dh] -> 131288****
+
 gh] -> 工号
+
 sfz -> 身份证
+
 dz -> 淘宝地址
+
 jm -> java main函数
+
 jp -> System.out.println(); java打印
+
 jt -> java 测试函数
+
 无论在中英文状态下，均可以打印出来。
 
 本软件致力于减少重复文字处理工作，提升工作效率，不论您是学生，程序员，律师，会计，客服等均可使用此软件来简化输入。
@@ -23,7 +30,7 @@ git 下载：https://github.com/zttAsoiaf/smartString/archive/master.zip
 ![git 下载](https://images.gitee.com/uploads/images/2020/0301/035908_cd391ef0_5544911.png "屏幕截图.png")
 
 
-如果网络不好可以在gitee下载（需要注册账号）：https://gitee.com/smartString/smart_string/repository/archive/master.zip
+如果网络不好可以在gitee下载（需要注册账号）：https://gitee.com/smartString/smartString/repository/archive/master.zip
 
 ![gitee下载](https://images.gitee.com/uploads/images/2020/0223/143847_76c9177e_5544911.png "屏幕截图.png")
 
