@@ -128,6 +128,7 @@ addPhraseHandle(){
     reload
 }
 cancel(){
+	Gui hide
 }
 
 contains(map,id){
