@@ -3,15 +3,7 @@
 #Include function.ahk
 global phrase := {}
 global fatherMap := {}
-;jm;
-fatherMap["jm"] := "java"
-description["jm"] := ""
-phrase["jm"] := 
-(
-"public static void main`(String args[]`){
-}"
-)
-;;;;;;;;;;
+
 ;dh;
 fatherMap["dh"] := "个人信息"
 description["dh"] := ""
@@ -21,10 +13,20 @@ phrase["dh"] :=
 )
 ;;;;;;;;;;
 ;sfz;
-fatherMap["sfz"] := "我的信息"
+fatherMap["sfz"] := "个人信息"
 description["sfz"] := ""
 phrase["sfz"] := 
 (
-"4104221992********"
+"410422*******"
+)
+;;;;;;;;;;
+;jm;
+fatherMap["jm"] := "java"
+description["jm"] := ""
+phrase["jm"] := 
+(
+"public static void main`(String args[]`){
+    
+}"
 )
 ;;;;;;;;;;

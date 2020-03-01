@@ -20,7 +20,7 @@ Menu, MyContextMenu, Add, delete, deletePhraseHandle
 
 Menu, MyDeleteContextMenu, Add, delete, deletePhraseHandle
 
-fatherTVMap := {}
+global fatherTVMap := {}
 ;sonTVMap := {}
 ;phrase := {}
 ;import("phrase.ahk",fatherTVMap,sonTVMap,phrase)

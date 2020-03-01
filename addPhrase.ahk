@@ -26,18 +26,31 @@ Menu ContextMenu, Add, &Open...`tCtrl+O, import
 Menu ContextMenu, Icon, &Open...`tCtrl+O, shell32.dll, 4
 
 Gui Add, Text, x10 y10 w350 h25, %abbreL%
+
 Gui Add, Edit, hWndhEdtValue vabbre x10 y35 w250 h25
+
+
+
+IniRead, fatherText, setting.ini, folder, default
+if(fatherText == ""){
+	fatherText := myPhraseL
+}
 Gui Add, Text, hWndhTxtText2 vTxtText1 x10 y65 w80 h25, %folderL%
-Gui Add, Edit, hWndhEdtValue vfather x80 y65 w120 h25, self
+;Gui Add, Edit, hWndhEdtValue vfather x80 y65 w120 h25, self
+Gui Add, ComboBox, vfather x80 y65 w120, %fatherText%||
+
 Gui Add, Text, hWndhTxtText2 vTxtText2 x10 y100 w80 h25, %descriptionL%
 Gui Add, Edit, hWndhEdtValue vdescription x80 y100 w120 h25
 Gui Add, Text, hWndhTxtText2 vTxtText4 x10 y130 w120 h25, %shortCutL%
-Gui Add, DropDownList, x80 y130 w120, ]||
+Gui Add, DropDownList, vColorChoice x80 y130 w120, ]||
 Gui Add, Text, hWndhTxtText3 vTxtText3 x10 y155 w250 h25, %supportL%
 Gui Add, Edit, vvalue x10 y180 w600 h200,%Clipboard%
 Gui Add, Button, gaddPhraseHandle1 x440 y390 w80 h25, %addL%
 Gui Add, Button, x530 y390 w80 h25 gcancel1, %cancelL%
 
+for key, value in fatherTVMap{
+	GuiControl, , father, %key%
+}
 
 Menu sogou, Add, Sogou, MenuHandler
 Menu FileMenu, Add, import, :sogou
@@ -59,6 +72,7 @@ MenuHandler:
     importSogo()
 Return
 
+
 HelpMenuHandler:
 	Run https://gitee.com/smartString/smart_string
 Return
@@ -66,9 +80,17 @@ Return
 addPhraseHandle1(CtrlHwnd, GuiEvent, EventInfo, ErrLevel := "") {
     GuiControlGet abbre
     GuiControlGet value
-    GuiControlGet father
     GuiControlGet description
+
+    GuiControlGet father
+	father := Trim(father)
+	if(father == ""){
+		father := myPhraseL
+	}
+	
     result := add(abbre,value,father,description)
+	
+	IniWrite, %father%, setting.ini, folder, default
     if(result == 0){
         reload
         Sleep 200 ; 如果加载成功, reload 会在 Sleep 期间关闭当前实例, 所以永远不会执行到下面的语句.

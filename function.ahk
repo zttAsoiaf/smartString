@@ -79,11 +79,11 @@ importSogo(){
 				
 				if(Match != ""){
 					Match := SubStr(Match,2)
-					FileAppend, `n;%key%;sogou;sogou;%son%`n:*:%key%]::`nsendText`n`(`n`(`"%Match%`"`)`n)`nreturn`n, sogou.ahk, UTF-8 
+					FileAppend, `n;%key%;sogou;sogou;%son%`n:*:%key%]::`nsendText`n`(`n`(`"%Match%`"`)`n)`nreturn`n, sogou.ahk
 					inputNum = %inputNum% + 1
 					value := RTrim(value,"`n")
 					if(value != ""){
-						FileAppend, %value%`"`)`n`)`nreturn, sogou.ahk, UTF-8
+						FileAppend, %value%`"`)`n`)`nreturn, sogou.ahk
 						inputNum = %inputNum% + 1
 					}
 					value := ""
@@ -145,7 +145,7 @@ addPhrase(abbre, value, description,father,son){
 	}
 	
 
-	FileAppend, `n;%abbre%;%description%;%father%;%son%`n:*:%abbre%]::`nSend`n`(`n`(`"%value%`"`)`n)`nreturn`n, phrase.ahk, UTF-8
+	FileAppend, `n;%abbre%;%description%;%father%;%son%`n:*:%abbre%]::`nSend`n`(`n`(`"%value%`"`)`n)`nreturn`n, phrase.ahk
 	phrase[abbre] := value
 	return 0
 }
@@ -157,8 +157,15 @@ add(abbre, value, fatherMapValue, description){
 ;        return 1
 ;	}
 
+	
+
 	abbre := Trim(abbre)
     valueTemp := Trim(value)
+	fatherMapValue := Trim(fatherMapValue)
+	if(fatherMapValue == ""){
+		fatherMapValue := myPhraseL
+	}
+	
 
 ;    RegExMatch(abbre, "[a-zA-Z0-9!@#$%^&*()\[\]\-{}|\\',.<>?/]+", Match)
 	RegExMatch(abbre, "[a-zA-Z0-9]+", Match)
@@ -188,8 +195,8 @@ add(abbre, value, fatherMapValue, description){
 	value := StrReplace(value,"(","``(",,Limit:=-1)
 	value := StrReplace(value,")","``)",,Limit:=-1)
 	value := StrReplace(value,"""","""""",,Limit:=-1)
-	FileAppend, `n;%abbre%;`nfatherMap["%abbre%"] := "%fatherMapValue%"`ndescription["%abbre%"] := "%description%"`nphrase["%abbre%"] := `n(`n"%value%"`n)`n;;;;;;;;;;,phrase.ahk, UTF-8
-	FileAppend, `n;%abbre%;`n:*:%abbre%]::`nsendText(phrase["%abbre%"])`nreturn`n;;;;;;;;;;, send.ahk, UTF-8
+	FileAppend, `n;%abbre%;`nfatherMap["%abbre%"] := "%fatherMapValue%"`ndescription["%abbre%"] := "%description%"`nphrase["%abbre%"] := `n(`n"%value%"`n)`n;;;;;;;;;;,phrase.ahk
+	FileAppend, `n;%abbre%;`n:*:%abbre%]::`nsendText(phrase["%abbre%"])`nreturn`n;;;;;;;;;;, send.ahk
 	return 0
 }
 
