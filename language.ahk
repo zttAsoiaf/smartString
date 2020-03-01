@@ -1,6 +1,8 @@
 ﻿class Language {
 	static lmap := {"en":1, "cn": 2}
 	static yes := ["yes", "确定"]
+	static runWithAdministrator := ["Set startup error, Please run with Administrator", "设置开机自启动错误，请右键以管理员身份运行"]
+	static setBoot := ["Set startup success", "设置开机启动成功"]
 	static support := ["Support Multi-line, less than 30000 characters", "支持多行，最多30000个字符"]
 	static addPhrase := ["Add Phrase", "添加自定义短语"]
 	static myPhrase := ["My Phrase", "我的短语"]
@@ -32,6 +34,8 @@
 default := 1
 IniRead, default, setting.ini, language, default
 global myPhraseL := Language.myPhrase[default]
+global runWithAdministratorL := Language.runWithAdministrator[default]
+global setBootL := Language.setBoot[default]
 global yesL := Language.yes[default]
 global supportL := Language.support[default]
 global addPhraseL := Language.addPhrase[default]

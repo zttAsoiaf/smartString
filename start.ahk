@@ -9,6 +9,8 @@ IfExist, %I_Icon%
 	Menu, Tray, Icon, %I_Icon%
 }
 
+FileCopy,.\startSmartString.ahk,C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+
 
 Gui, Add, TreeView, vMyTreeView gMyTreeView x0 y0 w240 h590
 Gui Add, Edit, x240 y0 w580 h590 vMyEdit
