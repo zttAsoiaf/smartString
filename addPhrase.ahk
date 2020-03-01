@@ -74,7 +74,7 @@ Return
 
 
 HelpMenuHandler:
-	Run https://gitee.com/smartString/smart_string
+	Run https://gitee.com/smartString/smartString
 Return
 
 addPhraseHandle1(CtrlHwnd, GuiEvent, EventInfo, ErrLevel := "") {

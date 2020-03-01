@@ -36,7 +36,7 @@ for key, element in fatherMap{
 
 TV_Modify(0, "Sort")
 
-Gui, Show, w820 h620, %myPhraseL%  ; 显示窗口及其 TreeView.
+Gui, Show, w820 h620, %myPhraseL%
 return
 
 MainEscape:
@@ -44,10 +44,9 @@ MainClose:
     Gui hide
 
 GuiContextMenu:
-    if (A_GuiControl != "MyTreeView")  ; 这个检查是可选的. 让它只为 TreeView 中的点击显示菜单.
+    if (A_GuiControl != "MyTreeView")
         return
-    ; 在提供的坐标处显示菜单, A_GuiX 和 A_GuiY. 应该使用这些
-    ; 因为即使用户按下 Appskey 它们也会提供正确的坐标:
+
     id := TV_GetSelection()
     if(contains(fatherTvMap,id) || contains(sonTvMap,id)){
         Menu, MyContextMenu, Show, %A_GuiX%, %A_GuiY%
