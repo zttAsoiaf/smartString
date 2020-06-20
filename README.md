@@ -58,10 +58,4 @@ git 下载：https://github.com/zttAsoiaf/smartString/archive/master.zip
 
 1. 在gitee留下您的建议。
 2. 提交代码。
-3. 如果此软件对您有所帮助，请您赞助我，您的支持是我持续更新的动力。
-
-![支付宝赞助](https://images.gitee.com/uploads/images/2020/0301/030302_9066bc68_5544911.png "屏幕截图.png")
-
-![微信赞助](https://images.gitee.com/uploads/images/2020/0301/030424_8097a0cf_5544911.png "屏幕截图.png")
-
-#### 赞助名单
+3. 点击star按钮收藏。
