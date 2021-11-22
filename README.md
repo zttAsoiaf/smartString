@@ -9,7 +9,8 @@
 
 在华为工作之后，依然没有放弃最初的想法，因为在工作中存在更多的同样问题，所以利用晚上和周末的时间尝试无数中方案，对比过C++，QT，C#，electron，python等桌面开发框架，最终发现了windows神器：AutoHotkey，基于此开发周期短，开发的包比较小，最终耗费数月的精力完成了该软件。
 
-目前该软件完美实现我的想法，每天用的最多的除了chrome，idea，就是他了![image](https://user-images.githubusercontent.com/10683246/142795763-49bcb223-12ec-406a-bc10-196132f2ea44.png)
+目前该软件完美实现我的想法，每天用的最多的除了chrome，idea，就是他了!
+![image](https://user-images.githubusercontent.com/10683246/142795763-49bcb223-12ec-406a-bc10-196132f2ea44.png)
 
 软件在此，完全开源和免费，好东西也不好推广，觉得好用的话请点个star鼓励一下吧，并推荐给你女朋友hhh，解放双手，释放脑部空间：
 https://github.com/zttAsoiaf/smartString/edit/master/README.md
