@@ -19,7 +19,7 @@ https://github.com/zttAsoiaf/smartString/edit/master/README.md
 
 ![image](https://user-images.githubusercontent.com/10683246/142794422-acbc318b-e107-4b2d-941d-f002dbd04284.png)
 
-PS： 我所在部门CBG在进行招聘工作，java后端工程师，待遇好，奖金高（15级综合约 50+），有意愿的可以找我进行内推。
+PS： 我所在部门CBG在进行招聘工作，java后端工程师，待遇好，奖金高（15级综合约 50+），有意愿的可以找我进行内推，可加我微信好友13128812409。
 
 
 
