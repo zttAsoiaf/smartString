@@ -2,6 +2,10 @@
 #NoEnv
 #Include language.ahk
 #Include phrase.ahk
+;#Include addPhrase.ahk
+
+;cmd_no:={重启:65303,编辑:65304,挂起:65305,暂停:65306,退出:65307}
+
 
 I_Icon = S_48px.ico
 IfExist, %I_Icon%
@@ -12,7 +16,7 @@ IfExist, %I_Icon%
 FileCopy,.\startSmartString.ahk,C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 
 
-Gui, Add, TreeView, vMyTreeView gMyTreeView x0 y0 w240 h590
+Gui Add, TreeView, vMyTreeView gMyTreeView x0 y0 w240 h590
 Gui Add, Edit, x240 y0 w580 h590 vMyEdit
 Gui Add, Button, gaddPhraseHandle x620 y592 w80 h25 vconfirm, %updateL%
 Gui Add, Button, x710 y592 w80 h25 gcancel vcancel, %cancelL%
@@ -21,6 +25,13 @@ Menu, MyContextMenu, Add, add, addPhraseGUI
 Menu, MyContextMenu, Add, delete, deletePhraseHandle
 
 Menu, MyDeleteContextMenu, Add, delete, deletePhraseHandle
+Menu, Tray, NoStandard
+Menu, Tray, Click, 1                            ;单击执行默认菜单项open，由OnClick实现。
+Menu, Tray, Add, Open, OnClick
+Menu, Tray, Add, Exit,OnExit
+Menu, Tray, Default, Open
+programName:="自定义快捷短语，快分享给你的好胸弟！"
+Menu,Tray,Tip,%programName% ;在托盘图标上悬停鼠标，显示
 
 global fatherTVMap := {}
 ;sonTVMap := {}
@@ -37,9 +48,43 @@ for key, element in fatherMap{
 
 
 TV_Modify(0, "Sort")
-
+Run addPhrase.ahk
 Gui, Show, w820 h620, %myPhraseL%
 return
+
+
+OnExit:
+    scriptname:="addPhrase.ahk"
+    ;~ sendcmd("编辑",scriptname)
+    ;~ sendcmd("暂停",scriptname)
+    sendcmd("退出",scriptname)
+    ExitApp
+return
+
+OnClick:
+if !LastClick 
+{
+        LastClick := 1
+        LastTC := A_TickCount
+        SetTimer,SingleClickEvent,-300
+}else if (A_TickCount-LastTC<300)
+{
+        SetTimer,SingleClickEvent,off
+        gosub,DoubleClickEvent
+}
+return
+
+SingleClickEvent:
+Gui, Show, w820 h620, %myPhraseL%
+LastClick := 0
+return
+
+
+DoubleClickEvent:
+Gui, Show, w820 h620, %myPhraseL%
+LastClick := 0
+return
+
 
 MainEscape:
 MainClose:
@@ -194,5 +239,3 @@ Menu Tray, Icon, shell32.dll, 321
 #n::  ; Win+Shift 热键
 Reload
 return
-
-#Include addPhrase.ahk

@@ -243,4 +243,14 @@ query(abbre){
 	MsgBox % phrase[abbre]
 }
 
+; 脚本之间互相控制
+sendcmd(cmd,scriptname)
+{
+	DetectHiddenWindows, on
+	SetTitleMatchMode,2
+	cmd_no:={重启:65303,编辑:65304,挂起:65305,暂停:65306,退出:65307}
+	PostMessage, 0x111,cmd_no[cmd],,,%scriptname%
+	return %cmd%
+}
+
 
