@@ -279,7 +279,21 @@ showSaveTime(){
     IniRead, lessCharacter, setting.ini, statistics, lessCharacter
     IniRead, printSpeed, setting.ini, statistics, printSpeed
     saveTime := Floor(lessCharacter/printSpeed)
-    Msgbox,,%statisticsL%,%usingTimesL%%useTime%`n%lessCharacterL%%lessCharacter%`n%saveTimeL%%saveTime%%inMinuteL%`n%shareL%
+    IniRead, tip, setting.ini, statistics, tip
+    if(saveTime > tip){
+        Msgbox,,%statisticsL%,%usingTimesL%%useTime%`n%lessCharacterL%%lessCharacter%`n%saveTimeL%%saveTime%%inMinuteL%`n%shareL%
+        Random, rand, 1, tip
+        if(rand < 0){
+            rand = 1
+        }
+
+        tip := tip + rand
+        if(tip == 0){
+            tip = 1
+        }
+        IniWrite, %tip%, setting.ini, statistics, tip
+    }
+    IniWrite, %lessCharacter%, setting.ini, statistics, lessCharacter
 }
 
 statisticsAdd(var_string){
@@ -289,5 +303,6 @@ statisticsAdd(var_string){
 
     IniRead, lessCharacter, setting.ini, statistics, lessCharacter
     lessCharacter := lessCharacter + StrLen(var_string)
+
     IniWrite, %lessCharacter%, setting.ini, statistics, lessCharacter
 }

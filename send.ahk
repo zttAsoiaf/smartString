@@ -6,3 +6,9 @@
 sendText(phrase["sfz"])
 return
 ;;;;;;;;;;
+
+;dh;
+:*:dh]::
+sendText(phrase["dh"])
+return
+;;;;;;;;;;
