@@ -16,7 +16,7 @@ IfExist, %I_Icon%
 FileCopy,.\startSmartString.ahk,C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 
 
-Gui Add, TreeView, vMyTreeView gMyTreeView x0 y0 w240 h590
+Gui Add, TreeView, vMyTreeView gMyTreeView x0 y0 w240 h590 %MyTreeView%
 Gui Add, Edit, x240 y0 w580 h590 vMyEdit
 Gui Add, Button, gaddPhraseHandle x620 y592 w80 h25 vconfirm, %updateL%
 Gui Add, Button, x710 y592 w80 h25 gcancel vcancel, %cancelL%
@@ -139,6 +139,7 @@ return
 
 MyTreeView:
     id := TV_GetSelection()
+    ; 如果没有点击到短语上面，则disable更新和取消按钮
     if(contains(fatherTvMap,id) || contains(sonTvMap,id)){
         GuiControl,, MyEdit,
         GuiControl, Disable, MyEdit
@@ -146,8 +147,11 @@ MyTreeView:
         GuiControl, Disable, cancel
         return
     }
+    ; 如果点击到短语上面，则显示 更新和取消按钮
     TV_GetText(phkey, id)
     phValue := phrase[phkey]
+    ; 设置悬停显示描述
+    ToolTip % description[phkey]
     GuiControl,, MyEdit, %phValue%
     GuiControl, Enable, MyEdit
     GuiControl, Enable, confirm
@@ -169,7 +173,7 @@ addPhraseHandle(){
         return
 	
     change(abbre,MyEdit,fatherMap[abbre],description[abbre])
-    reload
+    sendcmd("重启","start.ahk")
 }
 cancel(){
 	Gui hide
