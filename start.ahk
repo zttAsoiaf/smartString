@@ -70,17 +70,16 @@ if !LastClick
 }else if (A_TickCount-LastTC<300)
 {
         SetTimer,SingleClickEvent,off
-        gosub,DoubleClickEvent
+        Gui, Show, w820 h620, %myPhraseL%
+        LastClick := 0
 }
 return
 
-SingleClickEvent:
-Gui, Show, w820 h620, %myPhraseL%
-LastClick := 0
+OnClickAdd:
+    sendcmd("重启","addPhrase1.ahk")
 return
 
-
-DoubleClickEvent:
+SingleClickEvent:
 Gui, Show, w820 h620, %myPhraseL%
 LastClick := 0
 return
@@ -106,7 +105,7 @@ return
 
 
 addPhraseGUI(){
-    Run addPhrase.ahk
+    sendcmd("重启","addPhrase1.ahk")
 }
 
 deletePhraseHandle:
