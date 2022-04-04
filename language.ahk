@@ -14,12 +14,17 @@
 	static isUpdate := ["Are you sure to update it", "确定更新吗？"]
 	static cancel := ["Cancel","取消"]
 	static no := ["No","取消"]
-	static shortCut := ["Short cut:","快捷键："]
+	static shortCut := ["Shortcut:","快捷键："]
 	static hasKey := ["Already has this phrase, content:","已经存在此短语，值："]
 	static continue := ["Add and continue","确定并继续添加"]
 	static phraseEmptyOrError := ["Phrase empty or error","缩写为空或错误, 缩写支持：字母、数字"]
 	static valueEmpty := ["Value empty","短语为空"]
 	static overwrite := ["Overwrite it?","是否覆盖？"]
+	static sysShortcut := ["shortcut","快捷键"]
+	static document := ["document","文档"]
+	static quickAdd := ["add phrase quickly","快速添加短语"]
+	static showAllPhrase := ["show all phrase","显示所有短语"]
+	static help := ["help","帮助"]
 	get(var,defaultVar){
 		if(var){
 			return %var%
@@ -53,5 +58,10 @@ global phraseEmptyOrErrorL := Language.phraseEmptyOrError[default]
 global valueEmptyL := Language.valueEmpty[default]
 global hasKeyL := Language.hasKey[default]
 global overwriteL := Language.overwrite[default]
+global documentL := Language.document[default]
+global sysShortcutL := Language.sysShortcut[default]
+global quickAddL := Language.quickAdd[default]
+global showAllPhraseL := Language.showAllPhrase[default]
+global helpL := Language.help[default]
 
 ;Language.setLanguage(Language.lmap["en"])

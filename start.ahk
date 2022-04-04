@@ -21,6 +21,12 @@ Gui Add, Edit, x240 y0 w580 h590 vMyEdit
 Gui Add, Button, gaddPhraseHandle x620 y592 w80 h25 vconfirm, %updateL%
 Gui Add, Button, x710 y592 w80 h25 gcancel vcancel, %cancelL%
 
+; 添加快捷键帮助
+Menu help, Add, %documentL%, HelpMenuHandler
+Menu help, Add, %sysShortcutL%, SysShortcutLMenuHandler
+Menu MenuBar, Add, &%helpL%, :help
+Gui Menu, MenuBar
+
 Menu, MyContextMenu, Add, add, addPhraseGUI
 Menu, MyContextMenu, Add, delete, deletePhraseHandle
 
@@ -28,7 +34,9 @@ Menu, MyDeleteContextMenu, Add, delete, deletePhraseHandle
 Menu, Tray, NoStandard
 Menu, Tray, Click, 1                            ;单击执行默认菜单项open，由OnClick实现。
 Menu, Tray, Add, Open, OnClick
+; 添加右键添加
 Menu, Tray, Add, Add, OnClickAdd
+Menu, Tray, Add, Reload, OnClickReload
 Menu, Tray, Add, Exit,OnExit
 Menu, Tray, Default, Open
 programName:="自定义快捷短语，快分享给你的好胸弟！"
@@ -53,6 +61,17 @@ Run addPhrase.ahk
 Gui, Show, w820 h620, %myPhraseL%
 return
 
+OnClickReload:
+    reload
+return
+
+HelpMenuHandler:
+	runDocument()
+Return
+
+SysShortcutLMenuHandler:
+	runSysShortcut()
+Return
 
 OnExit:
     scriptname:="addPhrase.ahk"

@@ -253,4 +253,11 @@ sendcmd(cmd,scriptname)
 	return %cmd%
 }
 
+runDocument(){
+    Run https://gitee.com/smartString/smartString
+}
+
+runSysShortcut(){
+    Msgbox Win + z: %quickAddL%`nWin + n: %showAllPhraseL%
+}
 

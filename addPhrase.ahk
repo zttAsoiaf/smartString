@@ -72,8 +72,9 @@ Menu FileMenu, Add, import, :sogou
 Menu MenuBar, Add, &File, :FileMenu
 
 
-Menu help, Add, document, HelpMenuHandler
-Menu MenuBar, Add, &Help, :help
+Menu help, Add, %documentL%, HelpMenuHandler
+Menu help, Add, %sysShortcutL%, SysShortcutLMenuHandler
+Menu MenuBar, Add, &%helpL%, :help
 
 Gui Menu, MenuBar
 
@@ -87,9 +88,12 @@ MenuHandler:
     importSogo()
 Return
 
-
 HelpMenuHandler:
-	Run https://gitee.com/smartString/smartString
+	runDocument()
+Return
+
+SysShortcutLMenuHandler:
+	runSysShortcut()
 Return
 
 addPhraseHandle1(CtrlHwnd, GuiEvent, EventInfo, ErrLevel := "") {
