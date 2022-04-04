@@ -3,17 +3,10 @@
 #Include function.ahk
 global phrase := {}
 global fatherMap := {}
-;dh;
-fatherMap["dh"] := "个人信息"
-description["dh"] := ""
-phrase["dh"] := 
-(
-"1312881****"
-)
-;;;;;;;;;;
+global description := {}
 ;sfz;
 fatherMap["sfz"] := "个人信息"
-description["sfz"] := ""
+description["sfz"] := "身份证信息"
 phrase["sfz"] := 
 (
 "410422*******"

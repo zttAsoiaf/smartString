@@ -54,7 +54,7 @@ for key, value in fatherTVMap{
 
 Menu sogou, Add, Sogou, MenuHandler
 Menu FileMenu, Add, import, :sogou
-Menu MenuBar, Add, &File, :FileMenu
+;Menu MenuBar, Add, &File, :FileMenu
 
 
 Menu help, Add, %documentL%, HelpMenuHandler

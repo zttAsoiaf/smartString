@@ -25,6 +25,16 @@
 	static quickAdd := ["add phrase quickly","快速添加短语"]
 	static showAllPhrase := ["show all phrase","显示所有短语"]
 	static help := ["help","帮助"]
+	static nextShow := ["Press no to show this tip next start!","点击取消，下次启动继续提示！"]
+	static willNotShow := ["Press yes to not show this tip next start, please get this tip from help->shortcut!","点击确定，下次启动不再提示！"]
+	static helpShortcut := ["Get this tip from help->shortcut!", "请点击 帮助->快捷键 获得该提示！"]
+	static usingTimes := ["Your using times: ", "您的使用次数："]
+	static lessCharacter := ["Less print characters: ", "少打印字符数量："]
+	static saveTime := ["This software May save ", "该软件可能节省了您 "]
+	static inMinute := [" minutes for you,", " 分钟时间，"]
+	static share := ["Share this software to your friend, or give advice to me, my WeChat: 13128812409", "分享给你的好友，或者给我个建议，我的微信：13128812409"]
+	static statistics := ["Statistics:", "统计："]
+	static startTip := ["Start Tip:", "启动提示："]
 	get(var,defaultVar){
 		if(var){
 			return %var%
@@ -63,5 +73,14 @@ global sysShortcutL := Language.sysShortcut[default]
 global quickAddL := Language.quickAdd[default]
 global showAllPhraseL := Language.showAllPhrase[default]
 global helpL := Language.help[default]
+global nextShowL := Language.nextShow[default]
+global willNotShowL := Language.willNotShow[default]
+global usingTimesL := Language.usingTimes[default]
+global lessCharacterL := Language.lessCharacter[default]
+global saveTimeL := Language.saveTime[default]
+global inMinuteL := Language.inMinute[default]
+global shareL := Language.share[default]
+global statisticsL := Language.statistics[default]
+global startTipL := Language.startTip[default]
 
 ;Language.setLanguage(Language.lmap["en"])

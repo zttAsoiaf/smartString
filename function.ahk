@@ -117,6 +117,7 @@ sendText(var_string)
     send ^v
     sleep 100
     Clipboard = %ClipboardOld%  ; Restore previous contents of clipboard.
+    statisticsAdd(var_string)
 }
 
 ;成功返回0，失败返回1
@@ -258,6 +259,35 @@ runDocument(){
 }
 
 runSysShortcut(){
-    Msgbox Win + z: %quickAddL%`nWin + n: %showAllPhraseL%
+    Msgbox,,%shortcutL%,Win + z: %quickAddL%`nWin + n: %showAllPhraseL%
 }
 
+firstRun(){
+    IniRead, startTime, setting.ini, start, time
+    if (startTime < 3) {
+        Msgbox,1,%startTipL%,%helpShortcutL%`nWin + z: %quickAddL%`nWin + n: %showAllPhraseL%`n`n%nextShowL%`n%willNotShowL%
+        IfMsgBox Yes
+            Msgbox % startTime
+            var := startTime + 1
+            IniWrite, %var%, setting.ini, start, time
+        return
+    }
+}
+
+showSaveTime(){
+    IniRead, useTime, setting.ini, statistics, useTime
+    IniRead, lessCharacter, setting.ini, statistics, lessCharacter
+    IniRead, printSpeed, setting.ini, statistics, printSpeed
+    saveTime := Floor(lessCharacter/printSpeed)
+    Msgbox,,%statisticsL%,%usingTimesL%%useTime%`n%lessCharacterL%%lessCharacter%`n%saveTimeL%%saveTime%%inMinuteL%`n%shareL%
+}
+
+statisticsAdd(var_string){
+    IniRead, useTime, setting.ini, statistics, useTime
+    var := useTime + 1
+    IniWrite, %var%, setting.ini, statistics, useTime
+
+    IniRead, lessCharacter, setting.ini, statistics, lessCharacter
+    lessCharacter := lessCharacter + StrLen(var_string)
+    IniWrite, %lessCharacter%, setting.ini, statistics, lessCharacter
+}

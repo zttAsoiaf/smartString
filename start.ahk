@@ -59,6 +59,9 @@ for key, element in fatherMap{
 TV_Modify(0, "Sort")
 Run addPhrase.ahk
 Gui, Show, w820 h620, %myPhraseL%
+
+firstRun()
+showSaveTime()
 return
 
 OnClickReload:
