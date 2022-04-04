@@ -152,10 +152,15 @@ MyTreeView:
     phValue := phrase[phkey]
     ; 设置悬停显示描述
     ToolTip % description[phkey]
+    SetTimer, RemoveToolTip, -2000
     GuiControl,, MyEdit, %phValue%
     GuiControl, Enable, MyEdit
     GuiControl, Enable, confirm
     GuiControl, Enable, cancel
+return
+
+RemoveToolTip:
+    ToolTip
 return
 
 addPhraseHandle(){
