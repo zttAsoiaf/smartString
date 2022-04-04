@@ -28,6 +28,7 @@ Menu, MyDeleteContextMenu, Add, delete, deletePhraseHandle
 Menu, Tray, NoStandard
 Menu, Tray, Click, 1                            ;单击执行默认菜单项open，由OnClick实现。
 Menu, Tray, Add, Open, OnClick
+Menu, Tray, Add, Add, OnClickAdd
 Menu, Tray, Add, Exit,OnExit
 Menu, Tray, Default, Open
 programName:="自定义快捷短语，快分享给你的好胸弟！"
