@@ -21,15 +21,15 @@ dh] -> 13128812409 这是我的微信号
 
 gh] -> 工号
 
-sfz -> 身份证
+sfz] -> 身份证
 
-dz -> 淘宝地址
+dz] -> 淘宝地址
 
-jm -> java main函数
+jm] -> java main函数
 
-jp -> System.out.println(); java打印
+jp] -> System.out.println(); java打印
 
-jt -> java 测试函数
+jt] -> java 测试函数
 ```
 
 > 有任何问题，或者想要的功能，可以在 _Issues_ 中提给我。
@@ -45,10 +45,11 @@ jt -> java 测试函数
 * 无需使用特定的编辑器，均可以使用
 * 无需切换中英文状态，均可使用
 
+> 管理界面
 ![image](https://user-images.githubusercontent.com/10683246/174011645-e61484ee-db19-4f74-960b-466b58b8de79.png)
 
 
-#### 安装教程
+## 🐼 一分钟安装
 
 1.  下载并解压，
 git 下载：https://github.com/zttAsoiaf/smartString/archive/master.zip
@@ -60,12 +61,11 @@ git 下载：https://github.com/zttAsoiaf/smartString/archive/master.zip
 
 ![gitee下载](https://images.gitee.com/uploads/images/2020/0223/143847_76c9177e_5544911.png "屏幕截图.png")
 
-
-
 2.  点击[AutoHotkey_1.1.32.00_setup.exe]进行安装，或者从Autohotkey官网下载安装。
 3.  点击start.ahk启动。
 
-#### 使用说明
+## 🐷 一分钟使用
+> **请关闭搜狗设置中的【左右方括号选词】**
 
 1.  点击start.ahk进入主界面，可以查看所有的快捷短语，【win + n】 进行刷新。
 2.  使用鼠标划取要添加短语，然后使用快捷键【win + z】来添加短语。
@@ -74,12 +74,10 @@ git 下载：https://github.com/zttAsoiaf/smartString/archive/master.zip
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2020/0223/181454_adc75a60_5544911.png "屏幕截图.png")
 
-
-#### 注意事项
+## 🐨 注意事项
  **此软件暂时没有云端备份功能，因此更新软件时务必将自定义的短语文件[phrase.ahk]和[send.ahk]备份，否则自定义短语会丢失。** 
 
-#### 参与贡献
+## 🐶 参与贡献
 
-1. 在gitee留下您的建议。
-2. 提交代码。
-3. 点击star按钮收藏。
+> 在gitee留下您的建议。
+> 提交代码。
