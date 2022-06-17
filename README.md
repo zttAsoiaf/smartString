@@ -11,7 +11,7 @@
 > 如果这个项目让你有所收获，记得 Star 关注哦，这对我是非常不错的鼓励与支持。
 
 ## 🐯 软件简介
-> 管理界面
+> 管理界面（当前仅支持Windows）
 > 
 ![image](https://user-images.githubusercontent.com/10683246/142794422-acbc318b-e107-4b2d-941d-f002dbd04284.png)
 > **smartString**，当前主要功能是提供缩略语功能（快捷短语），
